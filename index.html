@@ -1,157 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>Data Walkthrough & Ethical Critique – CanadaFlowers.ca</title>
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@400;500&display=swap" rel="stylesheet">
-
-  <style>
-  /* Base Reset */
-  * {
-    box-sizing: border-box;
-  }
-
-  body {
-    font-family: "Inter", sans-serif;
-    background: linear-gradient(180deg, #fff7f9, #ffffff);
-    color: #2b2b2b;
-    margin: 0;
-    padding: 0;
-  }
-
-  .container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 48px 24px;
-  }
-
-  h1 {
-    font-family: "Playfair Display", serif;
-    font-size: clamp(2rem, 5vw, 2.6rem);
-    text-align: center;
-    color: #7a2e3a;
-    margin-bottom: 8px;
-  }
-
-  .subtitle {
-    text-align: center;
-    color: #9a6a73;
-    margin-bottom: 40px;
-    font-size: clamp(0.95rem, 3vw, 1.05rem);
-  }
-
-  h2 {
-    font-family: "Playfair Display", serif;
-    color: #7a2e3a;
-    margin-bottom: 10px;
-    font-size: clamp(1.25rem, 4vw, 1.5rem);
-  }
-
-  .section {
-    position: relative;
-    background: url('https://via.placeholder.com/800x600?text=Flowers') no-repeat center center/cover;
-    border-radius: 16px;
-    padding: clamp(20px, 4vw, 32px);
-    margin-bottom: 32px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-    border-left: 6px solid #e8b4bc;
-    overflow: hidden;
-    color: #2b2b2b;
-  }
-
-  /* Overlay to improve text readability */
-  .section::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(255, 255, 255, 0.75);
-    border-radius: 16px;
-    z-index: 0;
-  }
-
-  /* Make content appear above overlay */
-  .section * {
-    position: relative;
-    z-index: 1;
-  }
-
-  a {
-    color: #b34b5e;
-    text-decoration: none;
-    font-weight: 500;
-    word-break: break-word;
-  }
-
-  a:hover {
-    text-decoration: underline;
-  }
-
-  img {
-    width: 100%;
-    height: auto;
-    border-radius: 14px;
-    margin-top: 14px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
-  }
-
-  ul, ol {
-    margin-left: 20px;
-    padding-left: 0;
-  }
-
-  li {
-    margin-bottom: 8px;
-    line-height: 1.5;
-  }
-
-  pre {
-    background: #fff3f6;
-    padding: 18px;
-    border-radius: 12px;
-    overflow-x: auto;
-    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
-    border: 1px solid #f2cbd2;
-    white-space: pre-wrap;
-  }
-
-  footer {
-    text-align: center;
-    margin-top: 40px;
-    color: #a77c84;
-    font-size: 0.9rem;
-  }
-
-  /* Tablet Enhancements */
-  @media (min-width: 600px) {
-    .container {
-      padding: 60px 32px;
-    }
-
-    .section {
-      margin-bottom: 36px;
-    }
-  }
-
-  /* Desktop Enhancements */
-  @media (min-width: 1024px) {
-    .container {
-      max-width: 1000px;
-    }
-
-    .section {
-      padding: 36px 40px;
-    }
-  }
-</style>
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Production Portal</title>
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-  <div class="container">
 
+<!-- SIDEBAR -->
+<div class="sidebar" id="sidebar">
+  <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
+  <h2>Menu</h2>
+  <button class="active" onclick="navigate('announcements', this)">Announcements</button>
+  <button onclick="navigate('canadaflowers', this)">CanadaFlowers Analysis</button>
+  <button onclick="navigate('calendar', this)">Calendar</button>
+  <button onclick="navigate('bio', this)">Biography Form</button>
+  <button onclick="navigate('contact', this)">Management Contact</button>
+  <button onclick="navigate('table', this)">Contact Sheet</button>
+  <button onclick="navigate('secure', this)">Secure Docs</button>
+  <button onclick="navigate('downloads', this)">Downloads</button>
+  <button onclick="navigate('sharing', this)">Sharing</button>
+</div>
+
+<!-- MAIN CONTENT -->
+<main>
+
+<section id="announcements" class="page active">
+  <h1>📣 Announcements</h1>
+  <p>Welcome to the production portal. Rehearsals begin next week.</p>
+</section>
+
+<section id="canadaflowers" class="page">
+  <div class="container">
     <h1>CanadaFlowers.ca</h1>
     <p class="subtitle">Data Walkthrough & Ethical Analysis</p>
 
@@ -229,7 +111,89 @@
     <footer>
       THEA 3135 Data Walkthrough • CanadaFlowers.ca
     </footer>
-
   </div>
+</section>
+
+<section id="calendar" class="page">
+  <h1>📅 Rehearsal / Production Schedule</h1>
+
+  <div id="calendar-container">
+    <div id="calendar-header">
+      <button onclick="changeMonth(-1)">◀</button>
+      <h3 id="monthYear"></h3>
+      <button onclick="changeMonth(1)">▶</button>
+    </div>
+
+    <div class="calendar-grid">
+      <div class="day-name">Sun</div>
+      <div class="day-name">Mon</div>
+      <div class="day-name">Tue</div>
+      <div class="day-name">Wed</div>
+      <div class="day-name">Thu</div>
+      <div class="day-name">Fri</div>
+      <div class="day-name">Sat</div>
+    </div>
+
+    <div id="calendar-days" class="calendar-grid"></div>
+  </div>
+</section>
+
+<section id="bio" class="page">
+  <h1>📝 Biography Submission</h1>
+  <form onsubmit="submitBio(event)">
+    <textarea rows="5" required></textarea><br><br>
+    <button type="submit">Submit</button>
+  </form>
+  <p id="bioMsg" class="hidden">Biography submitted.</p>
+</section>
+
+<section id="contact" class="page">
+  <h1>📧 Management Contact</h1>
+  <p>Email: manager@production.com</p>
+  <form>
+    <input placeholder="Your message"><br><br>
+    <button>Send</button>
+  </form>
+</section>
+
+<section id="table" class="page">
+  <h1>📇 Contact Sheet</h1>
+  <div class="table-wrapper">
+    <table>
+      <tr><th>Name</th><th>Email</th><th>Phone</th></tr>
+      <tr><td>Director</td><td>dir@email.com</td><td>555-1234</td></tr>
+    </table>
+  </div>
+</section>
+
+<section id="secure" class="page">
+  <h1>🔒 Secure Documents</h1>
+  <input type="password" id="password" placeholder="Password">
+  <button onclick="checkPassword()">Enter</button>
+  <div id="secureContent" class="hidden">
+    <ul>
+      <li>Rehearsal Notes.pdf</li>
+      <li>Production Minutes.docx</li>
+    </ul>
+  </div>
+</section>
+
+<section id="downloads" class="page">
+  <h1>⬇ Public Downloads</h1>
+  <ul>
+    <li><a href="#">Risk & Release Form</a></li>
+    <li><a href="#">Photo Release</a></li>
+  </ul>
+</section>
+
+<section id="sharing" class="page">
+  <h1>🎨 Sharing Section</h1>
+  <p>Shared creative materials and process docs.</p>
+</section>
+
+</main>
+
+<script src="script.js"></script>
+
 </body>
 </html>

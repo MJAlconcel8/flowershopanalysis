@@ -1,0 +1,256 @@
+/* RESET */
+* {
+  box-sizing: border-box;
+}
+
+/* BASE */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 260px;
+  background: #222;
+  color: white;
+  height: 100vh;
+  padding: 15px;
+  transition: all 0.3s ease;
+}
+
+.sidebar.closed {
+  width: 60px;
+}
+
+.sidebar h2 {
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.sidebar button {
+  width: 100%;
+  background: none;
+  border: none;
+  color: white;
+  padding: 12px;
+  text-align: left;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.sidebar button:hover,
+.sidebar button.active {
+  background: #444;
+}
+
+.toggle-btn {
+  background: #444;
+  text-align: center;
+  cursor: pointer;
+  padding: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+}
+
+/* MAIN */
+main {
+  flex: 1;
+  padding: 20px;
+  overflow-x: hidden;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+/* CALENDAR */
+#calendar-container {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+#calendar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(40px, 1fr));
+}
+
+.day-name {
+  background: #eee;
+  text-align: center;
+  padding: 8px;
+  font-weight: bold;
+}
+
+.day {
+  border: 1px solid #ddd;
+  min-height: 80px;
+  padding: 5px;
+  font-size: 0.85rem;
+}
+
+.day strong {
+  display: block;
+}
+
+.today {
+  background: #e6f2ff;
+}
+
+.event {
+  background: #3498db;
+  color: white;
+  font-size: 0.7rem;
+  margin-top: 4px;
+  padding: 2px 4px;
+  border-radius: 3px;
+}
+
+/* TABLE */
+.table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 500px;
+}
+
+td, th {
+  border: 1px solid #ccc;
+  padding: 8px;
+}
+
+/* FORMS */
+input, textarea, button {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px;
+  font-size: 1rem;
+}
+
+button {
+  cursor: pointer;
+  min-height: 44px;
+}
+
+/* UTIL */
+.hidden {
+  display: none;
+}
+
+/* CANADA FLOWERS PAGE */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #666;
+  margin-top: -10px;
+}
+
+.section {
+  margin: 30px 0;
+  padding: 20px;
+  border-left: 4px solid #3498db;
+  background: #f9f9f9;
+}
+
+.section h2 {
+  margin-top: 0;
+  color: #333;
+}
+
+.section ul, .section ol {
+  margin: 15px 0;
+  padding-left: 20px;
+}
+
+.section li {
+  margin: 10px 0;
+}
+
+.section img {
+  max-width: 100%;
+  height: auto;
+  margin: 15px 0;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+}
+
+.section a {
+  color: #3498db;
+  text-decoration: none;
+}
+
+.section a:hover {
+  text-decoration: underline;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #222;
+  color: white;
+  margin-top: 40px;
+  border-radius: 5px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .sidebar.closed {
+    height: 50px;
+    overflow: hidden;
+  }
+
+  .sidebar h2 {
+    width: 100%;
+  }
+
+  .sidebar button {
+    flex: 1 1 50%;
+    text-align: center;
+  }
+
+  main {
+    padding: 15px;
+  }
+
+  .day {
+    min-height: 60px;
+    font-size: 0.75rem;
+  }
+
+  .event {
+    font-size: 0.65rem;
+  }
+}
