@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Production Portal</title>
+<title>THEA 3135 Website</title>
 <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -12,8 +12,9 @@
 <!-- SIDEBAR -->
 <div class="sidebar" id="sidebar">
   <div class="toggle-btn" onclick="toggleSidebar()">☰</div>
-  <h2>Menu</h2>
+  <h2>E-Commerce Retailer Database</h2>
   <button class="active" onclick="navigate('announcements', this)">Announcements</button>
+  <button onclick="navigate('amazondb', this)">Amazon DB</button>
   <button onclick="navigate('canadaflowers', this)">CanadaFlowers Analysis</button>
   <button onclick="navigate('calendar', this)">Calendar</button>
   <button onclick="navigate('bio', this)">Biography Form</button>
@@ -30,6 +31,18 @@
 <section id="announcements" class="page active">
   <h1>📣 Announcements</h1>
   <p>Welcome to the production portal. Rehearsals begin next week.</p>
+</section>
+
+<section id="amazondb" class="page">
+  <div class="container">
+    <h1>Amazon — E-Commerce Product Database</h1>
+    <p class="subtitle">Database schema for an online retailer</p>
+
+    <div class="section">
+      <img src="assets/amazondb.png" alt="Amazon DB Diagram" class="hero-image">
+      <p><em>Relational schema / architecture sketch for the e-commerce retailer database.</em></p>
+    </div>
+  </div>
 </section>
 
 <section id="canadaflowers" class="page">

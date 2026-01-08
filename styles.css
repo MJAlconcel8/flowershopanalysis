@@ -196,6 +196,17 @@ button {
   border-radius: 5px;
 }
 
+/* Larger header/hero image for announcements */
+.hero-image {
+  width: 100%;
+  max-width: 760px;
+  height: auto;
+  display: block;
+  margin: 16px 0;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+}
+
 .section a {
   color: #3498db;
   text-decoration: none;
